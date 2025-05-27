@@ -15,6 +15,11 @@ run/main_scene="uid://mqjl4vwn8ydq"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LevelManager="*res://_global/g_level_manager.gd"
+PlayerManager="*res://_global/g_player_manager.gd"
+
 [display]
 
 window/size/viewport_width=480

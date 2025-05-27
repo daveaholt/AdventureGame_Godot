@@ -11,15 +11,16 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 signal DirectionChanged(new_direction: Vector2)
 
 func _ready() -> void:
+	PlayerManager.player = self
 	state_machine.Initialize(self, animation_player)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	direction = Vector2(
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down")
 	).normalized()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
 func SetDirection() -> bool:
