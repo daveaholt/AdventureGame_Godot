@@ -13,12 +13,12 @@ func _process(delta):
 func _physics_process(delta: float) -> void:
 	change_state(current_state.physics_process(delta))	
 
-func initialize(_enemy: Enemy) -> void:
+func initialize(enemy: Enemy) -> void:
 	states = []
 	for c in get_children():
 		if c is EnemyState:
 			states.append(c)
-			c.enemy = _enemy
+			c.enemy = enemy
 			c.state_machine = self
 			c.init()
 	

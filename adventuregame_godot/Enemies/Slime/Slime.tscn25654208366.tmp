@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ba2m30o4emx5d"]
+[gd_scene load_steps=32 format=3 uid="uid://ba2m30o4emx5d"]
 
 [ext_resource type="Texture2D" uid="uid://d0o6in22xdbi6" path="res://Enemies/Slime/Slime.png" id="1_0ae7n"]
 [ext_resource type="Script" uid="uid://c07milcg5h2y3" path="res://Enemies/scripts/stateMachine/enemy.gd" id="1_wyclx"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://bi6tbgxfbk7vg" path="res://Enemies/scripts/stateMachine/enemy_state_wander.gd" id="6_2osmb"]
 [ext_resource type="PackedScene" uid="uid://cj8x0ls6p7iff" path="res://GeneralNodes/HurtBox/HurtBox.tscn" id="7_puctb"]
 [ext_resource type="Script" uid="uid://cdjb1dhmymbpp" path="res://Enemies/scripts/stateMachine/enemy_state_stun.gd" id="10_62dmb"]
-[ext_resource type="Script" uid="uid://6xwp6yvy3xrb" path="res://Enemies/scripts/stateMachine/enemy_state_destroy.gd" id="11_36jae"]
 [ext_resource type="Texture2D" uid="uid://by5h2csu4cnw0" path="res://Enemies/Slime/DestroySmoke.png" id="11_mp7rs"]
 [ext_resource type="Script" uid="uid://c0hk7cdw5ce7p" path="res://GeneralNodes/HitBox/HitBox.gd" id="12_ke740"]
 
@@ -724,17 +723,6 @@ collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_wyclx")
 
-[node name="HitBox" type="Area2D" parent="."]
-collision_layer = 256
-collision_mask = 0
-script = ExtResource("12_ke740")
-metadata/_custom_type_script = "uid://c0hk7cdw5ce7p"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, -5)
-shape = SubResource("CircleShape2D_suwpu")
-debug_color = Color(0.900131, 0.279083, 0.367144, 0.42)
-
 [node name="HurtBox" parent="." instance=ExtResource("7_puctb")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
@@ -776,12 +764,10 @@ wander_speed = 30.0
 state_animation_duration = 0.7
 next_state = NodePath("../Idle")
 
-[node name="Distroy" type="Node" parent="EnemyStateMachine"]
-script = ExtResource("11_36jae")
-
-[node name="Stun" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
+[node name="Stun" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("10_62dmb")
-next_state = NodePath("../Idle")
+
+[node name="Distroy" type="Node" parent="EnemyStateMachine"]
 
 [node name="DestroyEffect" type="Sprite2D" parent="."]
 visible = false
@@ -797,3 +783,11 @@ autoplay = "RESET"
 
 [node name="AudioPlayerSlime" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4
+
+[node name="HitBox" type="Area2D" parent="."]
+script = ExtResource("12_ke740")
+metadata/_custom_type_script = "uid://c0hk7cdw5ce7p"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_suwpu")
