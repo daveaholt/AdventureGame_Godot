@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://db55s5s3o1d33"]
+
+[ext_resource type="Script" uid="uid://l0gta3b5hm1u" path="res://GUI/Player_HUD/player_hud.gd" id="1_1pbxj"]
+[ext_resource type="Texture2D" uid="uid://6vrcx4kyp4cy" path="res://GUI/Player_HUD/gui-health.png" id="1_gian7"]
+[ext_resource type="PackedScene" uid="uid://bdi8m3gl5j5qd" path="res://GUI/Player_HUD/heart_GUI.tscn" id="2_1pbxj"]
+
+[node name="PlayerHud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1pbxj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_right = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(375, 9)
+texture = ExtResource("1_gian7")
+region_enabled = true
+region_rect = Rect2(29, -1, 34, 10)
+
+[node name="HFlowContainer" type="HFlowContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 18.0
+offset_right = 431.0
+offset_bottom = 45.0
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 2
+alignment = 1
+
+[node name="Heart" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart2" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart3" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart4" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart5" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart6" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart7" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart8" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart9" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart10" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart11" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart12" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart13" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart14" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart15" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
+
+[node name="Heart16" parent="CanvasLayer/Control/HFlowContainer" instance=ExtResource("2_1pbxj")]
+layout_mode = 2
