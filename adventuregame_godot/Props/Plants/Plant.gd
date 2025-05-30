@@ -10,7 +10,7 @@ func _ready() -> void:
 func TakeDamage(_hurt_box: HurtBox)-> void:
 	visible = false
 	collision_shape_2d.set_deferred("disabled", true)
-	await get_tree().create_timer(15.0).timeout
+	await get_tree().create_timer(16.0).timeout
 	visible = true
 	collision_shape_2d.set_deferred("disabled", false)
 	
